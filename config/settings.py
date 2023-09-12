@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # * Third party
     'djmoney',
+    'drf_yasg',
     'rest_framework',
     # * My apps
     'stock',
