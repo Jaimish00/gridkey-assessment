@@ -26,3 +26,14 @@ class StockTransaction(models.Model):
         max_length=10,
         help_text="Split ratio of the stock"
     )
+
+    balance_quantity = models.IntegerField(null=True, blank=True, default=None)
+    average_buy_price = MoneyField(
+        max_digits=19,
+        decimal_places=4,
+        default_currency="INR",
+        help_text="Average buy price",
+        null=True,
+        blank=True,
+        default=None
+    )

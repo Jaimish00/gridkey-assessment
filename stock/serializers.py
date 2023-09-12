@@ -45,4 +45,4 @@ class StockTransactionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = StockTransaction
-        fields = '__all__'
+        fields = ["trade_type", "price", "quantity", "trade_date", "split_ratio"]
