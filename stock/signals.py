@@ -27,6 +27,7 @@ def update_balance_and_average_buy_price(sender, instance, created, **kwargs):
                 buy_index = 0
                 while sell_quantity > 0:
                     if len(list_of_buy_trades) <= buy_index:
+                        instance.delete()
                         raise ValueError("You don't have enough stocks to sell")
 
                     if list_of_buy_trades[buy_index][0] >= sell_quantity:
@@ -49,6 +50,7 @@ def update_balance_and_average_buy_price(sender, instance, created, **kwargs):
         balance_quantity, avg_buy_price = find_balance_quantity_and_avg_buy_price(
             list_of_buy_trades
         )
+
         instance.balance_quantity = balance_quantity
         instance.average_buy_price = avg_buy_price
 
